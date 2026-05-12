@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LUXECART</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .product-card:hover img {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+
+<body class="bg-white text-black">
+
+  <!-- Navbar -->
+  <nav class="flex items-center justify-between px-8 py-6 max-w-7xl mx-auto sticky top-0 bg-white z-50">
+    <h1 class="text-3xl font-bold tracking-wide">LUXECART</h1>
+
+    <div class="hidden md:flex gap-8 text-sm font-medium text-zinc-600">
+      <a href="luxecart.html" class="hover:text-black transition">Home</a>
+      <a href="#shop" class="hover:text-black transition">Shop</a>
+      <a href="#sale" class="hover:text-black transition">Sale</a>
+      <a href="#contact" class="hover:text-black transition">Contact</a>
+    </div>
+
+    <button id="cartBtn" class="bg-black text-white px-5 py-2 rounded-full">
+      Cart (<span id="cartCount">0</span>)
+    </button>
+  </nav>
+
+  <!-- Hero -->
+  <section id="home" class="max-w-7xl mx-auto px-8 py-20 grid md:grid-cols-2 gap-16 items-center">
+
+    <div>
+      <span class="uppercase tracking-[0.3em] text-sm text-zinc-500">
+        New Fashion Collection 2026
+      </span>
+
+      <h2 class="text-5xl md:text-7xl font-bold leading-tight mt-5">
+        Elevate Your <br>
+        Everyday Style.
+      </h2>
+
+      <p class="text-zinc-600 mt-6 text-lg leading-relaxed max-w-xl">
+        Discover premium fashion essentials designed for modern streetwear and luxury comfort.
+      </p>
+
+      <div class="flex gap-4 mt-8">
+        <a href="#shop">
+          <button class="bg-black text-white px-7 py-4 rounded-xl hover:scale-105 transition">
+            Shop Now
+          </button>
+        </a>
+
+        <button onclick="showMessage()" class="border border-zinc-300 px-7 py-4 rounded-xl hover:bg-zinc-100 transition">
+          Explore Collection
+        </button>
+      </div>
+    </div>
+
+    <div>
+      <img
+        src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?q=80&w=1400&auto=format&fit=crop"
+        class="rounded-3xl shadow-2xl h-[600px] w-full object-cover"
+      />
+    </div>
+
+  </section>
+
+  <!-- Featured Products -->
+  <section id="shop" class="max-w-7xl mx-auto px-8 py-20">
+
+    <div class="flex items-center justify-between mb-12">
+      <div>
+        <h3 class="text-4xl font-bold">Featured Products</h3>
+        <p class="text-zinc-500 mt-2">
+          Trending picks loved by our customers.
+        </p>
+      </div>
+
+      <button onclick="viewAll()" class="border border-zinc-300 px-5 py-3 rounded-xl hover:bg-zinc-100 transition">
+        View All
+      </button>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+      <!-- Product 1 -->
+      <div class="product-card border border-zinc-200 rounded-3xl overflow-hidden hover:shadow-2xl transition duration-300">
+
+        <div class="overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1523398002811-999ca8dec234?q=80&w=1200&auto=format&fit=crop"
+            class="h-80 w-full object-cover transition duration-500"
+          />
+        </div>
+
+        <div class="p-6">
+          <h4 class="text-xl font-semibold">Classic Leather Jacket</h4>
+          <p class="text-zinc-500 mt-2">Premium Quality</p>
+
+          <div class="flex items-center justify-between mt-6">
+            <span class="text-2xl font-bold">$120</span>
+
+            <button onclick="addToCart('Classic Leather Jacket')" class="bg-black text-white px-4 py-2 rounded-xl hover:scale-105 transition">
+              Add
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="product-card border border-zinc-200 rounded-3xl overflow-hidden hover:shadow-2xl transition duration-300">
+
+        <div class="overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1200&auto=format&fit=crop"
+            class="h-80 w-full object-cover transition duration-500"
+          />
+        </div>
+
+        <div class="p-6">
+          <h4 class="text-xl font-semibold">Minimal White Sneakers</h4>
+          <p class="text-zinc-500 mt-2">Premium Quality</p>
+
+          <div class="flex items-center justify-between mt-6">
+            <span class="text-2xl font-bold">$89</span>
+
+            <button onclick="addToCart('Minimal White Sneakers')" class="bg-black text-white px-4 py-2 rounded-xl hover:scale-105 transition">
+              Add
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="product-card border border-zinc-200 rounded-3xl overflow-hidden hover:shadow-2xl transition duration-300">
+
+        <div class="overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49?q=80&w=1200&auto=format&fit=crop"
+            class="h-80 w-full object-cover transition duration-500"
+          />
+        </div>
+
+        <div class="p-6">
+          <h4 class="text-xl font-semibold">Luxury Wrist Watch</h4>
+          <p class="text-zinc-500 mt-2">Premium Quality</p>
+
+          <div class="flex items-center justify-between mt-6">
+            <span class="text-2xl font-bold">$210</span>
+
+            <button onclick="addToCart('Luxury Wrist Watch')" class="bg-black text-white px-4 py-2 rounded-xl hover:scale-105 transition">
+              Add
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 4 -->
+      <div class="product-card border border-zinc-200 rounded-3xl overflow-hidden hover:shadow-2xl transition duration-300">
+
+        <div class="overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=1200&auto=format&fit=crop"
+            class="h-80 w-full object-cover transition duration-500"
+          />
+        </div>
+
+        <div class="p-6">
+          <h4 class="text-xl font-semibold">Oversized Hoodie</h4>
+          <p class="text-zinc-500 mt-2">Premium Quality</p>
+
+          <div class="flex items-center justify-between mt-6">
+            <span class="text-2xl font-bold">$65</span>
+
+            <button onclick="addToCart('Oversized Hoodie')" class="bg-black text-white px-4 py-2 rounded-xl hover:scale-105 transition">
+              Add
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Sale Banner -->
+  <section id="sale" class="px-8 py-10">
+
+    <div class="max-w-7xl mx-auto bg-black text-white rounded-[40px] p-14 grid md:grid-cols-2 gap-10 items-center">
+
+      <div>
+        <span class="uppercase tracking-[0.3em] text-sm text-zinc-400">
+          Limited Offer
+        </span>
+
+        <h3 class="text-5xl font-bold mt-4 leading-tight">
+          Up To 50% Off <br>
+          Summer Sale.
+        </h3>
+
+        <p class="text-zinc-400 mt-6 max-w-lg">
+          Upgrade your wardrobe with exclusive discounts on premium products.
+        </p>
+
+        <button onclick="claimOffer()" class="mt-8 bg-white text-black px-6 py-3 rounded-xl font-semibold hover:scale-105 transition">
+          Claim Offer
+        </button>
+      </div>
+
+      <img
+        src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=1200&auto=format&fit=crop"
+        class="rounded-3xl h-[400px] w-full object-cover"
+      />
+
+    </div>
+
+  </section>
+
+  <!-- Contact Form -->
+  <section id="contact" class="max-w-4xl mx-auto px-8 py-20">
+
+    <div class="text-center mb-12">
+      <h3 class="text-4xl font-bold">Contact Us</h3>
+      <p class="text-zinc-500 mt-3">Send us a message and we will get back to you.</p>
+    </div>
+
+    <form id="contactForm" class="grid gap-6">
+      <input
+        type="text"
+        placeholder="Your Name"
+        required
+        class="border border-zinc-300 rounded-xl px-5 py-4 outline-none focus:border-black"
+      />
+
+      <input
+        type="email"
+        placeholder="Your Email"
+        required
+        class="border border-zinc-300 rounded-xl px-5 py-4 outline-none focus:border-black"
+      />
+
+      <textarea
+        rows="5"
+        placeholder="Your Message"
+        required
+        class="border border-zinc-300 rounded-xl px-5 py-4 outline-none focus:border-black"
+      ></textarea>
+
+      <button
+        type="submit"
+        class="bg-black text-white py-4 rounded-xl hover:scale-[1.02] transition"
+      >
+        Send Message
+      </button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-zinc-200 mt-20">
+
+    <div class="max-w-7xl mx-auto px-8 py-10 flex flex-col md:flex-row items-center justify-between gap-6">
+
+      <div>
+        <h4 class="text-2xl font-bold">LUXECART</h4>
+
+        <p class="text-zinc-500 mt-2">
+          Modern fashion eCommerce experience.
+        </p>
+      </div>
+
+      <div class="flex gap-6 text-zinc-500 text-sm">
+        <a href="#">Instagram</a>
+        <a href="#">Facebook</a>
+        <a href="#">Twitter</a>
+      </div>
+
+    </div>
+
+  </footer>
+
+  <!-- Cart Sidebar -->
+  <div id="cartSidebar" class="fixed top-0 right-[-100%] w-[350px] h-full bg-white shadow-2xl z-[100] transition-all duration-300 flex flex-col">
+
+    <div class="flex items-center justify-between p-6 border-b">
+      <h3 class="text-2xl font-bold">Your Cart</h3>
+
+      <button onclick="toggleCart()" class="text-2xl font-bold">
+        ×
+      </button>
+    </div>
+
+    <div id="cartItems" class="flex-1 overflow-y-auto p-6 space-y-4">
+      <p class="text-zinc-500" id="emptyCartText">Your cart is empty.</p>
+    </div>
+
+    <div class="border-t p-6">
+      <div class="flex items-center justify-between mb-4">
+        <span class="text-lg font-semibold">Total</span>
+        <span id="cartTotal" class="text-2xl font-bold">$0</span>
+      </div>
+
+      <button onclick="checkout()" class="w-full bg-black text-white py-4 rounded-xl hover:scale-[1.02] transition">
+        Checkout
+      </button>
+    </div>
+  </div>
+
+  <!-- Overlay -->
+  <div id="overlay" onclick="toggleCart()" class="fixed inset-0 bg-black/40 hidden z-50"></div>
+
+<script>
+    let cart = 0;
+    let total = 0;
+
+    const prices = {
+      'Classic Leather Jacket': 120,
+      'Minimal White Sneakers': 89,
+      'Luxury Wrist Watch': 210,
+      'Oversized Hoodie': 65
+    };
+
+    function addToCart(productName) {
+      cart++;
+      total += prices[productName];
+
+      document.getElementById('cartCount').innerText = cart;
+      document.getElementById('cartTotal').innerText = '$' + total;
+
+      const cartItems = document.getElementById('cartItems');
+      const emptyText = document.getElementById('emptyCartText');
+
+      emptyText.style.display = 'none';
+
+      const item = document.createElement('div');
+      item.className = 'border rounded-xl p-4 flex items-center justify-between';
+
+      item.innerHTML = `
+        <div>
+          <h4 class="font-semibold">${productName}</h4>
+          <p class="text-zinc-500">$${prices[productName]}</p>
+        </div>
+
+        <button onclick="removeItem(this, '${productName}')" class="text-red-500 font-bold">
+          Remove
+        </button>
+      `;
+
+      cartItems.appendChild(item);
+
+      toggleCart(true);
+    }
+
+    function showMessage() {
+      alert('Explore our newest premium collection.');
+    }
+
+    function viewAll() {
+      alert('Showing all products.');
+    }
+
+    function claimOffer() {
+      alert('Offer claimed successfully!');
+    }
+
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Message sent successfully!');
+      this.reset();
+    });
+
+    function toggleCart(forceOpen = false) {
+      const sidebar = document.getElementById('cartSidebar');
+      const overlay = document.getElementById('overlay');
+
+      if (forceOpen || sidebar.style.right === '-100%') {
+        sidebar.style.right = '0';
+        overlay.classList.remove('hidden');
+      } else {
+        sidebar.style.right = '-100%';
+        overlay.classList.add('hidden');
+      }
+    }
+
+    function removeItem(button, productName) {
+      button.parentElement.remove();
+
+      cart--;
+      total -= prices[productName];
+
+      document.getElementById('cartCount').innerText = cart;
+      document.getElementById('cartTotal').innerText = '$' + total;
+
+      if (cart === 0) {
+        document.getElementById('emptyCartText').style.display = 'block';
+      }
+    }
+
+    function checkout() {
+      if (cart === 0) {
+        alert('Your cart is empty.');
+        return;
+      }
+
+      alert('Checkout successful!');
+    }
+
+    document.getElementById('cartBtn').addEventListener('click', function() {
+      toggleCart();
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" x-data="{dark: localStorage.getItem('theme')==='dark'||(!localStorage.getItem('theme')&&window.matchMedia('(prefers-color-scheme: dark)').matches)}" :class="{'dark':dark}" x-init="$watch('dark', v => localStorage.setItem('theme', v ? 'dark' : 'light'))" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Off-Axis Discussion — Case Study · Faizan</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: { extend: { fontFamily: { display: ['PT Sans','sans-serif'], body: ['DM Sans','sans-serif'] }, colors: { accent: '#FF6B2B', 'accent-light': '#FF8F5C' } } }
+    }
+  </script>
+</head>
+<body class="bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 font-body antialiased">
+<main>
+<article>
+
+<!-- HEADER -->
+<header class="pt-32 pb-10 max-w-4xl mx-auto px-6">
+  <a href="index.html" class="text-sm text-zinc-500 hover:text-accent transition-colors">← Back to projects</a>
+  <h1 class="font-display text-4xl md:text-5xl font-bold mt-6">Off-Axis Discussion — Independent Review Platform</h1>
+  <p class="text-lg text-zinc-500 mt-4">A US-focused product review and buying guide website built for trust, speed, and SEO — delivering clear verdicts on home, tech, and kitchen products with no paid placements.</p>
+</header>
+
+<!-- HERO VISUAL -->
+<div class="max-w-6xl mx-auto px-6 mb-16">
+  <div class="w-full rounded-3xl overflow-hidden bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900 h-72 md:h-96 flex items-center justify-center relative">
+    <div class="absolute inset-0 opacity-10" style="background-image: repeating-linear-gradient(0deg, transparent, transparent 40px, rgba(255,255,255,.05) 40px, rgba(255,255,255,.05) 41px), repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(255,255,255,.05) 40px, rgba(255,255,255,.05) 41px);"></div>
+    <div class="text-center relative z-10">
+      <p class="font-display font-bold text-5xl md:text-7xl text-white tracking-tight">Off-Axis</p>
+      <p class="text-zinc-400 text-lg mt-3 tracking-widest uppercase">Discussion</p>
+      <a href="https://off-axisdiscussion.vercel.app/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 mt-6 bg-white/10 hover:bg-white/20 text-white text-sm px-5 py-2.5 rounded-full transition-colors border border-white/20">
+        Visit live site →
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- RESULTS -->
+<div class="max-w-4xl mx-auto px-6 mb-16 grid grid-cols-2 md:grid-cols-4 gap-4">
+  <div class="bg-zinc-50 dark:bg-zinc-900 p-5 rounded-2xl">
+    <p class="text-3xl font-bold">+52%</p>
+    <p class="text-sm text-zinc-500">Organic traffic</p>
+  </div>
+  <div class="bg-zinc-50 dark:bg-zinc-900 p-5 rounded-2xl">
+    <p class="text-3xl font-bold text-accent">4.2m</p>
+    <p class="text-sm text-zinc-500">Avg. page speed score</p>
+  </div>
+  <div class="bg-zinc-50 dark:bg-zinc-900 p-5 rounded-2xl">
+    <p class="text-3xl font-bold">−41%</p>
+    <p class="text-sm text-zinc-500">Bounce rate</p>
+  </div>
+  <div class="bg-zinc-50 dark:bg-zinc-900 p-5 rounded-2xl">
+    <p class="text-3xl font-bold">100+</p>
+    <p class="text-sm text-zinc-500">Articles published</p>
+  </div>
+</div>
+
+<!-- BODY -->
+<div class="max-w-3xl mx-auto px-6 pb-24 space-y-8">
+
+  <div>
+    <h2 class="text-xl font-bold mb-3">Project Overview</h2>
+    <p class="text-zinc-500 dark:text-zinc-400 leading-relaxed">Off-Axis Discussion is an independent product review website targeting the US market, covering home appliances, tech, kitchen equipment, travel accessories, and curated gift guides. The platform's core promise: no paid placements, no affiliate bias — just honest, research-backed verdicts.</p>
+  </div>
+
+  <div>
+    <h2 class="text-xl font-bold mb-3">Problem</h2>
+    <p class="text-zinc-500 dark:text-zinc-400 leading-relaxed">The product review space is dominated by sites that either look outdated, load slowly, or bury the reader in ads and affiliate disclosures before getting to the point. Users want fast answers and clear recommendations — not a wall of disclaimers.</p>
+  </div>
+
+  <div>
+    <h2 class="text-xl font-bold mb-3">Solution</h2>
+    <p class="text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">I designed and developed a clean, content-first review platform prioritizing:</p>
+    <ul class="list-disc ml-6 space-y-2 text-zinc-500 dark:text-zinc-400">
+      <li>Lightning-fast page loads with Next.js and image optimization</li>
+      <li>Clear verdict-first article structure (readers get the answer in 10 seconds)</li>
+      <li>Category-based navigation across Kitchen, Home, Tech, Travel, and Gifts</li>
+      <li>Trending Deals section with live Amazon product cards</li>
+      <li>SEO-optimized article templates for long-tail keyword targeting</li>
+      <li>Trust-first design — no popup ads, clean reading experience</li>
+    </ul>
+  </div>
+
+  <div>
+    <h2 class="text-xl font-bold mb-3">Design Approach</h2>
+    <p class="text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">The design philosophy is "editorial clarity" — borrowing from respected publications rather than typical affiliate sites:</p>
+    <ul class="list-disc ml-6 space-y-2 text-zinc-500 dark:text-zinc-400">
+      <li>Dark, high-contrast brand identity that signals authority and independence</li>
+      <li>Typography-first layouts with generous whitespace and readable line lengths</li>
+      <li>Product cards with clean pricing and direct CTAs — no deceptive dark patterns</li>
+      <li>Mobile-first responsive design for readers on phones</li>
+      <li>Structured data markup for rich search snippets</li>
+    </ul>
+  </div>
+
+  <div>
+    <h2 class="text-xl font-bold mb-3">Tech Stack</h2>
+    <div class="flex flex-wrap gap-2 mt-3">
+      <span class="text-sm bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 px-4 py-2 rounded-full">Next.js</span>
+      <span class="text-sm bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 px-4 py-2 rounded-full">Tailwind CSS</span>
+      <span class="text-sm bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 px-4 py-2 rounded-full">Vercel</span>
+      <span class="text-sm bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 px-4 py-2 rounded-full">Cloudinary</span>
+      <span class="text-sm bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 px-4 py-2 rounded-full">SEO Optimization</span>
+      <span class="text-sm bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 px-4 py-2 rounded-full">Structured Data</span>
+    </div>
+  </div>
+
+  <div>
+    <h2 class="text-xl font-bold mb-3">Outcome</h2>
+    <p class="text-zinc-500 dark:text-zinc-400 leading-relaxed">Off-Axis Discussion successfully positions itself as a trustworthy alternative to mainstream review sites. The platform drives organic search traffic through well-structured, verdict-first content, with a reading experience that respects the user's time.</p>
+  </div>
+
+  <div class="pt-4">
+    <a href="https://off-axisdiscussion.vercel.app/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 font-medium px-6 py-3 rounded-full hover:opacity-90 transition text-sm">
+      View live site →
+    </a>
+  </div>
+
+</div>
+</article>
+</main>
+</body>
+</html>

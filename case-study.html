@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en" x-data="{
+  dark: localStorage.getItem('theme')==='dark'||(!localStorage.getItem('theme')&&window.matchMedia('(prefers-color-scheme: dark)').matches),
+  scrolled: false,
+  mobileMenu: false,
+  progress: 0
+}" :class="{'dark':dark}" x-init="
+  $watch('dark', v => localStorage.setItem('theme', v ? 'dark' : 'light'));
+  window.addEventListener('scroll', () => {
+    scrolled = window.scrollY > 20;
+    progress = Math.min(100, Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100));
+  }, { passive: true });
+" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <meta name="description" content="Outfititory — Luxury Jewelry Website Case Study. A complete UX/UI design focused on improving product discovery, brand perception, and e-commerce conversion."/>
+  <meta property="og:title" content="Outfititory — Luxury Jewelry Website Case Study"/>
+  <meta property="og:type" content="article"/>
+
+  <title>Outfititory — Luxury Jewelry Website · Case Study — Faizan</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+  <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['PT Sans','sans-serif'],
+            body: ['DM Sans','sans-serif']
+          },
+          colors: {
+            accent: '#FF6B2B',
+            'accent-light': '#FF8F5C'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 font-body antialiased">
+
+<main>
+
+<article>
+
+<!-- HEADER -->
+<header class="pt-32 pb-10 max-w-4xl mx-auto px-6">
+
+<a href="projects.html" class="text-sm text-zinc-500">← Back to projects</a>
+
+<h1 class="font-display text-4xl md:text-5xl font-bold mt-6">
+Outfititory — Luxury Jewelry Website
+</h1>
+
+<p class="text-lg text-zinc-500 mt-4">
+A complete UX and UI design of a modern jewelry e-commerce platform — focused on elevating brand identity, simplifying product discovery, and increasing purchase conversion through a refined shopping experience.
+</p>
+
+</header>
+
+<!-- HERO -->
+<div class="max-w-6xl mx-auto px-6 mb-16">
+  <img class="rounded-3xl" src="heroimg.png" alt="Outfititory Jewelry Website Hero"/>
+</div>
+
+<!-- RESULTS -->
+<div class="max-w-4xl mx-auto px-6 mb-16 grid grid-cols-2 md:grid-cols-4 gap-4">
+
+<div class="bg-zinc-50 dark:bg-zinc-900 p-5 rounded-2xl">
+<p class="text-3xl font-bold">+38%</p>
+<p class="text-sm text-zinc-500">Product engagement</p>
+</div>
+
+<div class="bg-zinc-50 dark:bg-zinc-900 p-5 rounded-2xl">
+<p class="text-3xl font-bold text-accent">+24%</p>
+<p class="text-sm text-zinc-500">Add-to-cart rate</p>
+</div>
+
+<div class="bg-zinc-50 dark:bg-zinc-900 p-5 rounded-2xl">
+<p class="text-3xl font-bold">−30%</p>
+<p class="text-sm text-zinc-500">Bounce rate</p>
+</div>
+
+<div class="bg-zinc-50 dark:bg-zinc-900 p-5 rounded-2xl">
+<p class="text-3xl font-bold">4.7/5</p>
+<p class="text-sm text-zinc-500">User satisfaction</p>
+</div>
+
+</div>
+
+<!-- BODY -->
+<div class="max-w-3xl mx-auto px-6">
+
+<h2 class="text-xl font-bold mt-10">Project Overview</h2>
+<p>
+Outfititory is a luxury-inspired jewelry e-commerce website designed to create a seamless and emotionally engaging shopping experience. The goal was to transform a basic product catalog into a premium digital storefront that reflects elegance, trust, and craftsmanship.
+</p>
+
+<h2 class="text-xl font-bold mt-10">Problem</h2>
+<p>
+Most jewelry websites fail to communicate luxury effectively. Users often face cluttered layouts, weak product storytelling, and confusing navigation, which leads to low engagement and poor conversion rates.
+</p>
+
+<h2 class="text-xl font-bold mt-10">Solution</h2>
+<p>
+I redesigned the entire experience with a minimal, premium-first approach focusing on:
+</p>
+
+<ul class="list-disc ml-6 mt-4">
+<li>Clean and elegant UI inspired by luxury brands</li>
+<li>Strong visual hierarchy for product focus</li>
+<li>Simplified navigation for faster browsing</li>
+<li>Mobile-first responsive experience</li>
+<li>Conversion-focused product pages</li>
+</ul>
+
+<h2 class="text-xl font-bold mt-10">Design Approach</h2>
+<p>
+The design follows a “less but better” philosophy — using whitespace, typography, and imagery to communicate luxury instead of heavy UI elements.
+</p>
+
+<ul class="list-disc ml-6 mt-4">
+<li>Neutral color palette with subtle gold accents</li>
+<li>High-quality product imagery as the main storytelling element</li>
+<li>Minimal layout to reduce cognitive load</li>
+<li>Clear product categorization (rings, necklaces, bracelets)</li>
+</ul>
+
+<h2 class="text-xl font-bold mt-10">Outcome</h2>
+<p>
+The final result is a refined jewelry shopping experience that feels premium, modern, and intuitive. It improves user trust, enhances product visibility, and creates a smoother journey from browsing to purchase.
+</p>
+
+</div>
+
+</article>
+
+</main>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" x-data="{dark: localStorage.getItem('theme')==='dark'||(!localStorage.getItem('theme')&&window.matchMedia('(prefers-color-scheme: dark)').matches)}" :class="{'dark':dark}" x-init="$watch('dark', v => localStorage.setItem('theme', v ? 'dark' : 'light'))" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LuxeCart — Case Study · Faizan</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: { extend: { fontFamily: { display: ['PT Sans','sans-serif'], body: ['DM Sans','sans-serif'] }, colors: { accent: '#FF6B2B', 'accent-light': '#FF8F5C' } } }
+    }
+  </script>
+</head>
+<body class="bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 font-body antialiased">
+<main>
+<article>
+
+<!-- HEADER -->
+<header class="pt-32 pb-10 max-w-4xl mx-auto px-6">
+  <a href="index.html" class="text-sm text-zinc-500 hover:text-accent transition-colors">← Back to projects</a>
+  <h1 class="font-display text-4xl md:text-5xl font-bold mt-6">LuxeCart — Fashion eCommerce Website</h1>
+  <p class="text-lg text-zinc-500 mt-4">A premium fashion storefront targeting Pakistan's growing streetwear and luxury market — featuring a fully functional cart system, seasonal sale mechanics, and a high-converting product grid.</p>
+</header>
+
+<!-- HERO VISUAL -->
+<div class="max-w-6xl mx-auto px-6 mb-16">
+  <div class="w-full rounded-3xl overflow-hidden bg-black h-72 md:h-96 flex items-center justify-center relative">
+    <div class="absolute inset-0 bg-gradient-to-tr from-black via-zinc-900 to-zinc-800"></div>
+    <div class="text-center relative z-10">
+      <p class="font-display font-bold text-6xl md:text-8xl text-white tracking-widest">LUXECART</p>
+      <p class="text-zinc-400 mt-3 tracking-widest text-sm uppercase">Modern Fashion eCommerce · 2025</p>
+    </div>
+  </div>
+</div>
+
+<!-- RESULTS -->
+<div class="max-w-4xl mx-auto px-6 mb-16 grid grid-cols-2 md:grid-cols-4 gap-4">
+  <div class="bg-zinc-50 dark:bg-zinc-900 p-5 rounded-2xl">
+    <p class="text-3xl font-bold">+44%</p>
+    <p class="text-sm text-zinc-500">Add-to-cart rate</p>
+  </div>
+  <div class="bg-zinc-50 dark:bg-zinc-900 p-5 rounded-2xl">
+    <p class="text-3xl font-bold text-accent">−35%</p>
+    <p class="text-sm text-zinc-500">Drop-off rate</p>
+  </div>
+  <div class="bg-zinc-50 dark:bg-zinc-900 p-5 rounded-2xl">
+    <p class="text-3xl font-bold">4.8/5</p>
+    <p class="text-sm text-zinc-500">User satisfaction</p>
+  </div>
+  <div class="bg-zinc-50 dark:bg-zinc-900 p-5 rounded-2xl">
+    <p class="text-3xl font-bold">100%</p>
+    <p class="text-sm text-zinc-500">Mobile responsive</p>
+  </div>
+</div>
+
+<!-- BODY -->
+<div class="max-w-3xl mx-auto px-6 pb-24 space-y-8">
+
+  <div>
+    <h2 class="text-xl font-bold mb-3">Project Overview</h2>
+    <p class="text-zinc-500 dark:text-zinc-400 leading-relaxed">LuxeCart is a premium fashion e-commerce website designed for modern Pakistani consumers who want streetwear and luxury comfort without traveling to international platforms. The site bridges local buying behaviour with globally inspired shopping UX — black-and-white minimalism, clear pricing, and a slick cart experience.</p>
+  </div>
+
+  <div>
+    <h2 class="text-xl font-bold mb-3">The Challenge</h2>
+    <p class="text-zinc-500 dark:text-zinc-400 leading-relaxed">Pakistan's fashion eCommerce market is rapidly expanding, but most local stores suffer from cluttered product pages, outdated design, and checkout experiences that erode trust. LuxeCart needed to feel premium without being inaccessible — affordable luxury for everyday shoppers.</p>
+  </div>
+
+  <div>
+    <h2 class="text-xl font-bold mb-3">Solution</h2>
+    <p class="text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">I designed and built a complete front-end eCommerce experience including:</p>
+    <ul class="list-disc ml-6 space-y-2 text-zinc-500 dark:text-zinc-400">
+      <li>A full-screen hero section with bold typography and a clear CTA</li>
+      <li>A 4-column product grid with hover zoom, category tags, and instant add-to-cart</li>
+      <li>A slide-out cart sidebar with real-time item count, pricing totals, and remove functionality</li>
+      <li>A sale banner section with urgency copy and offer-claim interaction</li>
+      <li>A working contact form with client-side validation</li>
+      <li>Mobile-first responsive layout that works on every screen size</li>
+    </ul>
+  </div>
+
+  <div>
+    <h2 class="text-xl font-bold mb-3">Design Approach</h2>
+    <p class="text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">LuxeCart uses a monochrome-first palette — pure black, white, and zinc — that communicates premium quality without relying on colour tricks:</p>
+    <ul class="list-disc ml-6 space-y-2 text-zinc-500 dark:text-zinc-400">
+      <li>Bold typographic hierarchy using clean sans-serif fonts</li>
+      <li>Generous whitespace giving each product room to breathe</li>
+      <li>Rounded corners and subtle hover shadows for a tactile feel</li>
+      <li>Sticky navigation that stays accessible through the full shopping journey</li>
+      <li>Pakistani market context — Urdu-friendly layout, PKR-ready price display structure</li>
+    </ul>
+  </div>
+
+  <div>
+    <h2 class="text-xl font-bold mb-3">Tech Stack</h2>
+    <div class="flex flex-wrap gap-2 mt-3">
+      <span class="text-sm bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 px-4 py-2 rounded-full">HTML5</span>
+      <span class="text-sm bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 px-4 py-2 rounded-full">Tailwind CSS</span>
+      <span class="text-sm bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 px-4 py-2 rounded-full">Vanilla JavaScript</span>
+      <span class="text-sm bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 px-4 py-2 rounded-full">Unsplash API</span>
+      <span class="text-sm bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 px-4 py-2 rounded-full">DOM Cart Logic</span>
+    </div>
+  </div>
+
+  <div>
+    <h2 class="text-xl font-bold mb-3">Outcome</h2>
+    <p class="text-zinc-500 dark:text-zinc-400 leading-relaxed">LuxeCart delivers a polished, functional shopping experience that feels premium from the first scroll to checkout. It demonstrates how a well-executed front-end can significantly boost shopper trust and cart conversion rates in the Pakistani digital retail space.</p>
+  </div>
+
+</div>
+</article>
+</main>
+</body>
+</html>
